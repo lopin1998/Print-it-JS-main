@@ -20,8 +20,8 @@ const slides = [
 /** Initailisation Variable */
 let index = 0
 const img = document.querySelector("#img-slider")
-const marcel = document.querySelector('#marcel')
-const roger = document.querySelector('#roger')
+const arrow_left = document.querySelector('#left')
+const arrow_right = document.querySelector('#right')
 let dot = null
 const dotCtn = document.querySelector('#allDot')
 const text = document.querySelector('#tagline')
@@ -47,18 +47,18 @@ dot = document.querySelectorAll('.dot')
 nextImage(index)
 
 /** Ecoute click */
-marcel.addEventListener('click', () => {
+arrow_right.addEventListener('click', () => {
 	index++
 
 	console.log(slides.lenght)
-	if (index == slides.lenght) {
+	if (index > 3) {
 		console.log('dans le if')
 		index = 0
 	}
 
 	nextImage(index)
 })
-roger.addEventListener('click', () => {
+arrow_left.addEventListener('click', () => {
 	index--
 
 	if (index < 0) {
